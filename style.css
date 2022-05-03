@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin: 0;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: red;
+}
+
+.container_header{
+    height: 75px;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container_header a{
+    text-decoration: none;
+    color: white;
+}
+
+
