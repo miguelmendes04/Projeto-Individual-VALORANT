@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'VALORANT';
+    src: url(fonts/Valorant_Font.ttf);
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -15,7 +20,7 @@ header{
 }
 
 .container_header{
-    height: 75px;
+    height: 65px;
     width: 50%;
     display: flex;
     justify-content: space-evenly;
@@ -24,7 +29,27 @@ header{
 
 .container_header a{
     text-decoration: none;
+}
+
+.icon_val{
+    font-family: 'VALORANT';
+    font-size: 34px;
+    margin: 0;
+    padding: 0;
     color: white;
+    padding-top: 7px;
+}
+
+.icon_val:hover{
+    color: #fa4454;
+}
+
+.item_lista{
+    color: white;
+}
+
+.item_lista:hover{
+    color: #fa4454;
 }
 
 
