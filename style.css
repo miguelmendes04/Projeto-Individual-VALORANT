@@ -3,9 +3,15 @@
     src: url(fonts/Valorant_Font.ttf);
 }
 
+@font-face {
+    font-family: 'Radio_canada';
+    src: url(fonts/Radio_Canada/RadioCanada-VariableFont_wdth\,wght.ttf);
+}
+
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Radio_canada';
 }
 
 h1{
@@ -17,10 +23,13 @@ header{
     justify-content: center;
     background-color: black;
     color: red;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
 }
 
 .container_header{
-    height: 65px;
+    height: 70px;
     width: 50%;
     display: flex;
     justify-content: space-evenly;
