@@ -1,3 +1,4 @@
+/* Globais */
 @font-face {
     font-family: 'VALORANT';
     src: url(fonts/Valorant_Font.ttf);
@@ -18,14 +19,32 @@ h1{
     margin: 0;
 }
 
+p{
+    margin: 0;
+    padding: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #fa4454;
+  }
+  
+
+/* Header */
 header{
     display: flex;
     justify-content: center;
-    background-color: black;
+    background-color: #000000bf;
     color: red;
     position: fixed;
     z-index: 3;
     width: 100%;
+    border-bottom: #fa4454 2px solid;
 }
 
 .container_header{
@@ -61,4 +80,26 @@ header{
     color: #fa4454;
 }
 
+/* Banner */
+.banner{
+    background-image: url('imagens/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.container_banner{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.container_banner h1{
+    color: whitesmoke;
+    font-size: 55px;
+    text-align: center;
+    text-shadow: 2px 1px black;
+}
