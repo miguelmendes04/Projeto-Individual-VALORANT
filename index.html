@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto do Miguel</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <div class="container_header">
-            <a href="" class="item_lista">Sobre o jogo</a>
-            <a href="" class="icon_val">vALORaNT</a>
-            <a href="" class="item_lista">Escolha seu agente</a>
-        </div>
+      <div class="container_header">
+        <a href="#sobre" class="item_lista">Sobre o jogo</a>
+        <a href="" class="icon_val">vALORaNT</a>
+        <a href="" class="item_lista">Escolha seu agente</a>
+      </div>
     </header>
     <div class="banner">
-        <div class="container_banner">
-            <h1>VALORANT é um jogo competitivo de tiro tático 5x5</h1>
-        </div>
+      <div class="container_banner">
+        <h1>
+          <span class="text_valo">vALORaNT</span> é um jogo competitivo de tiro
+          tático 5x5
+        </h1>
+      </div>
     </div>
-</body>
+    <div class="sobre_o_jogo" id="sobre">
+      <span class="fundo">vALORaNT</span>
+      <span class="fundo2">vALORaNT</span>
+      <div class="container1">
+        <h1>Um pouco sobre o jogo</h1>
+      </div>
+      <div class="container2">
+        <div class="explicacao_jogo">
+          <span class="span_p1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uma partida é composta por 2 equipes de 5 integrantes cada e, ao início de cada partida, os integrantes
+          da equipe escolhem com qual agente querem jogar (mas atenção, não pode ter mais de um agente igual no mesmo time!).</span>
+          <br><br>
+          <span class="span_p2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Um time começa atacando e o seu objetivo é plantar a Spike (bomba). Por sua vez, os defensores
+            devem evitar que os atacantes plantem a bomba por 1 minuto e 40 segundos. O round acaba caso a Spike plantada exploda ou
+            caso um dos times mate todos os seus oponentes.
+          </span>
+        </div>
+        <div class="video_highlight">
+          <video src="videos/5k no reload.mp4" controls loop></video>
+          <p>O vídeo acima é um exemplo meu jogando!</p>
+        </div>
+      </div>
+    </div>
+    <div id="div_escolha_agentes"></div>
+    <footer>
+      <span>2022 - Feito por Miguel Mendes, um SPTecher</span>
+    </footer>
+  </body>
 </html>
