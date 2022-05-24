@@ -168,7 +168,7 @@ header{
 }
 
 .sobre_o_jogo .explicacao_jogo{
-    width: 40%;
+    width: 35%;
     /* border: 1px solid white; */
     height: 387px;
     font-size: 22px;
@@ -181,7 +181,7 @@ header{
 }
 
 .sobre_o_jogo .video_highlight{
-    width: 45%;
+    width: 690px;
     height: 388px;
     color: white;
     text-align: center;
