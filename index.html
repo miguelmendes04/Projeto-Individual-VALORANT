@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto do Miguel</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="imagens/valorant-favicon.png"/>
   </head>
   <body>
     <header>
@@ -31,13 +32,38 @@
       </div>
       <div class="container2">
         <div class="explicacao_jogo">
-          <span class="span_p1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uma partida é composta por 2 equipes de 5 integrantes cada e, ao início de cada partida, os integrantes
-          da equipe escolhem com qual agente querem jogar (mas atenção, não pode ter mais de um agente igual no mesmo time!).</span>
-          <br><br>
-          <span class="span_p2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Um time começa atacando e o seu objetivo é plantar a Spike (bomba). Por sua vez, os defensores
-            devem evitar que os atacantes plantem a bomba por 1 minuto e 40 segundos. O round acaba caso a Spike plantada exploda ou
-            caso um dos times mate todos os seus oponentes.
-          </span>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uma partida é composta por
+            2 equipes de 5 integrantes cada e, ao início de cada partida, os
+            integrantes da equipe escolhem com qual agente querem jogar (mas
+            atenção, não pode ter mais de um agente igual no mesmo time!).
+          </p>
+          <br />
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Um time começa atacando e
+            o seu objetivo é plantar a Spike (bomba). Por sua vez, os defensores
+            devem evitar que os atacantes plantem a bomba por 1 minuto e 40
+            segundos. Depois de 12 rounds jogados, invertem-se os lados dos
+            times.
+          </p>
+          <br />
+          <p>
+            Um round pode acabar em 4 casos:
+            <br />
+            1. Os defensores conseguem segurar o time atacante até o round
+            acabar e a Spike não é plantada. (Ponto para os defensores!)
+            <br />
+            2. O time atacante planta a Spike e a mesma explode. (Ponto para os
+            atacantes!)
+            <br />
+            3. O time defensor desarma a Spike plantada. (Ponto para os
+            defensores!)
+            <br />
+            4. Um dos times elimina todos os oponentes. (Ponto para o time que
+            ficou vivo!)
+          </p>
+          <br />
+          <p>Vence o time que fizer 13 pontos.</p>
         </div>
         <div class="video_highlight">
           <video src="videos/clutch omen 1x4.mp4" controls loop></video>
@@ -47,7 +73,11 @@
     </div>
     <div id="div_escolha_agentes"></div>
     <footer>
-      <span>2022 - Feito por Miguel Mendes, um SPTecher</span>
+      <span>2022 - Feito pelo SPTecher Miguel Mendes</span>
     </footer>
   </body>
 </html>
+
+<script>
+  document.getElementsByTagName("video")[0].volume = 0.5;
+</script>
