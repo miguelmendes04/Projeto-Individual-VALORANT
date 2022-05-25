@@ -116,19 +116,27 @@ header{
 /* sobre o jogo */
 
 .sobre_o_jogo{
-    height: 800px;
+    height: 1400px;
     background-color: #000;
     display: flex;
     flex-direction: column;
     position: relative;
+    padding-bottom: 80px;
 }
 
-.sobre_o_jogo .fundo{
+.sobre_o_jogo .fundo_val{
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sobre_o_jogo .fundo_val .fundo{
     font-family: 'VALORANT';
     font-size: 300px;
     color: black;
-    position: absolute;
-    z-index: 1;
     text-shadow: 2px 0 0 #1c1c1c, -2px 0 0 #1c1c1c, 0 2px 0 #1c1c1c, 0 -2px 0 #1c1c1c, 1px 1px #1c1c1c, -1px -1px 0 #1c1c1c, 1px -1px 0 #1c1c1c, -1px 1px 0 #1c1c1c
 }
 
@@ -145,7 +153,8 @@ header{
 .sobre_o_jogo h1{
     color: white;
     font-family: 'VALORANT';
-    padding-top: 10px;
+    padding-top: 20px;
+    font-size: 40px;
 }
 
 .sobre_o_jogo .container1{
@@ -163,7 +172,7 @@ header{
     display: flex;
     justify-content: space-around;
     /* border: 1px solid yellow; */
-    height: 100%;
+    height: 750px;
     z-index: 3;
 }
 
@@ -194,8 +203,43 @@ header{
     height: 100%;
     cursor: pointer;
     border: 2px solid #fa4454;
-    border-radius: 4px;
 }
+
+.sobre_mim{
+    color: white;
+    z-index: 3;
+}
+
+.sobre_mim .container{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+.sobre_mim .container .div_textos{
+    width: 30%;
+    font-size: 22px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sobre_mim h1{
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.div_top230{
+    text-align: center;
+}
+
+.img_top230{
+    border: 2px white solid;
+    width: 800px;
+}
+
 
 
 footer{
