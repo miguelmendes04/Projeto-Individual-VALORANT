@@ -31,6 +31,7 @@ p{
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
+    background-color: black;
   }
   
   /* Handle */
@@ -137,7 +138,7 @@ header{
     font-family: 'VALORANT';
     font-size: 300px;
     color: black;
-    text-shadow: 2px 0 0 #1c1c1c, -2px 0 0 #1c1c1c, 0 2px 0 #1c1c1c, 0 -2px 0 #1c1c1c, 1px 1px #1c1c1c, -1px -1px 0 #1c1c1c, 1px -1px 0 #1c1c1c, -1px 1px 0 #1c1c1c
+    text-shadow: 2px 0 0 #232323, -2px 0 0 #232323, 0 2px 0 #232323, 0 -2px 0 #232323, 1px 1px #232323, -1px -1px 0 #232323, 1px -1px 0 #232323, -1px 1px 0 #232323
 }
 
 .sobre_o_jogo .fundo2{
@@ -147,7 +148,7 @@ header{
     position: absolute;
     bottom: 0;
     z-index: 1;
-    text-shadow: 2px 0 0 #1c1c1c, -2px 0 0 #1c1c1c, 0 2px 0 #1c1c1c, 0 -2px 0 #1c1c1c, 1px 1px #1c1c1c, -1px -1px 0 #1c1c1c, 1px -1px 0 #1c1c1c, -1px 1px 0 #1c1c1c
+    text-shadow: 2px 0 0 #232323, -2px 0 0 #232323, 0 2px 0 #232323, 0 -2px 0 #232323, 1px 1px #232323, -1px -1px 0 #232323, 1px -1px 0 #232323, -1px 1px 0 #232323
 }
 
 .sobre_o_jogo h1{
