@@ -1,12 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escolha seu agente</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="imagens/valorant-favicon.png" />
+  </head>
+  <body style="background-image: url('imagens/range.jpg')">
+    <header>
+      <div class="container_header">
+        <a href="#sobre" class="item_lista">Sobre o jogo</a>
+        <a href="index.html" class="icon_val">vALORaNT</a>
+        <a href="escolha.html" class="item_lista">Escolha seu Agente e MApa</a>
+      </div>
+    </header>
+    <div class="container_select">
+      <div class="select_mapas">
+        <label for="mapa_fundo">Escolha um mapa:</label>
+        <select id="mapa_fundo">
+          <option value="ascent">Ascent</option>
+          <option value="bind">Bind</option>
+          <option value="breeze">Breeze</option>
+          <option value="fracture">Fracture</option>
+          <option value="haven">Haven</option>
+          <option value="icebox">Icebox</option>
+          <option value="range" selected="selected">Range</option>
+          <option value="split">Split</option>
+        </select>
+      </div>
+    </div>
+    <div class="container_mais_votados">
+        <div class="mais_votados">
+            <h1>Agentes mais votados:</h1>
+            <div class="primeiro_lugar">
+                <h2>1º</h2>
+            </div>
+            <div class="segundo_lugar">
+                <h3>2º</h3>
+            </div>
+            <div class="terceiro_lugar">
+                <h3>3º</h3>
+            </div>
+        </div>
+        <div class="mais_votados">
+            <h1>Mapas mais votados:</h1>
+            <div class="primeiro_lugar">
+                <h2>1º</h2>
+            </div>
+            <div class="segundo_lugar">
+                <h3>2º</h3>
+            </div>
+            <div class="terceiro_lugar">
+                <h3>3º</h3>
+            </div>
+        </div>
+    </div>
+    <div class="selecionar_agentes">
+        <div class="info_agentes">
+            <h1>Agente selecionado: <span id="span_agente_selecionado"></span></h1>
+            <h2>ClAsse: <span id="span_classe_selecionada"></span></h2>
+            <p id="sobre_o_agente"></p>
+        </div>
+      <div class="div_agentes">
+          <button
+            class="agente"
+            id="Astra"
+            style="
+              background-image: url('imagens/astra-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+            class="agente"
+            id="Breach"
+            style="
+              background-image: url('imagens/breach-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+            class="agente"
+            id="Brimstone"
+            style="
+              background-image: url('imagens/brimstone-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+          class="agente"
+          id="Chamber"
+          style="
+              background-image: url('imagens/chamber-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+          class="agente"
+            id="Cypher"
+            style="
+              background-image: url('imagens/cypher-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+          class="agente"
+          id="Fade"
+          style="
+              background-image: url('imagens/fade-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+            class="agente"
+            id="Jett"
+            style="
+              background-image: url('imagens/jett-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+            class="agente"
+            id="Kayo"
+            style="
+              background-image: url('imagens/kayo-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+            class="agente"
+            id="Killjoy"
+            style="
+              background-image: url('imagens/killjoy-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+            class="agente"
+            id="Neon"
+            style="
+              background-image: url('imagens/neon-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+          class="agente"
+          id="Omen"
+          style="
+              background-image: url('imagens/omen-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+          class="agente"
+            id="Phoenix"
+            style="
+              background-image: url('imagens/phoenix-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+          class="agente"
+          id="Raze"
+          style="
+              background-image: url('imagens/raze-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+            class="agente"
+            id="Reyna"
+            style="
+              background-image: url('imagens/reyna-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+            class="agente"
+            id="Sage"
+            style="
+              background-image: url('imagens/sage-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+            class="agente"
+            id="Skye"
+            style="
+              background-image: url('imagens/skye-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+            class="agente"
+            id="Sova"
+            style="
+              background-image: url('imagens/sova-select.png');
+              background-size: contain;
+              background-color: transparent;
+            "
+          ></button>
+          <button
+          class="agente"
+          id="Viper"
+          style="
+            background-image: url('imagens/viper-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+        ></button>
+    </div>
+    <button class="btn_confirmar">Confirmar</button>
+    </div>
+  </body>
 </html>
+
+<script>
+  var selectMapas = document.getElementById("mapa_fundo");
+
+  selectMapas.onclick = function () {
+    if (this.value == "ascent") {
+      document.body.style.backgroundImage = "url('imagens/ascent.jpg')";
+    } else if (this.value == "bind") {
+      document.body.style.backgroundImage = "url('imagens/bind.jpg')";
+    } else if (this.value == "breeze") {
+      document.body.style.backgroundImage = "url('imagens/breeze.jpg')";
+    } else if (this.value == "fracture") {
+      document.body.style.backgroundImage = "url('imagens/fracture.jpg')";
+    } else if (this.value == "haven") {
+      document.body.style.backgroundImage = "url('imagens/haven.jpg')";
+    } else if (this.value == "icebox") {
+      document.body.style.backgroundImage = "url('imagens/icebox.jpg')";
+    } else if (this.value == "range") {
+      document.body.style.backgroundImage = "url('imagens/range.jpg')";
+    } else if (this.value == "split") {
+      document.body.style.backgroundImage = "url('imagens/split.jpg')";
+    }
+  };
+</script>
+
+<script>
+    function escolher_agentes(){
+        
+    }
+</script>
