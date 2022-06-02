@@ -13,9 +13,19 @@
       <div class="container_header">
         <a href="#sobre" class="item_lista">Sobre o jogo</a>
         <a href="index.html" class="icon_val">vALORaNT</a>
-        <a href="escolha.html" class="item_lista">Escolha seu Agente e MApa</a>
+        <a href="escolha.html" class="item_lista">vote aqui</a>
       </div>
     </header>
+    <div id="confirmacao_voto" class="alert">
+      <div class="alert_container">
+          <span id="alert_mensagem" class="alert_mensagem">
+              Voto cadastrado!
+          </span>
+      </div>
+      <a href="escolha.html">
+          OK
+      </a>
+    </div>
     <div class="container_select">
       <div class="select_mapas">
         <label for="mapa_fundo">Escolha um mapa:</label>
@@ -258,7 +268,7 @@
           onclick="alterarNomeAgente(this.id); alterarClasseAgente('Duelista'); alterarImgAgente(`imagens/${this.id}.png`)"
         ></button>
       </div>
-      <button class="btn_confirmar">Confirmar</button>
+      <button class="btn_confirmar" onclick="cadastrar()">Confirmar</button>
     </div>
   </body>
 </html>
@@ -303,4 +313,70 @@
     const classe_agente = document.querySelector("#span_classe_selecionada");
     classe_agente.innerHTML = classe;
   }
+
+  function cadastrar() {
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var votoMapaVar = mapa_fundo.value;
+        var votoAgenteVar = span_agente_selecionado.innerHTML;
+
+        if (votoAgenteVar == ""){
+          alert('Selecione um agente.')
+        } else{
+          // Enviando o valor da nova input
+          fetch("/usuarios/cadastrar", {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                  // crie um atributo que recebe o valor recuperado aqui
+                  // Agora vá para o arquivo routes/usuario.js
+                  votoMapaServer: votoMapaVar,
+                  votoAgenteServer: votoAgenteVar
+              })
+          })
+          document.querySelector('.alert').style.visibility = 'visible'
+        }
+    }
+
+    function atualizacaoPeriodica() {
+        obterdados();
+        obterdados();
+
+        function sendData() {
+			var http = new XMLHttpRequest();
+			http.open('POST', 'http://localhost:3000/api/sendData', false);
+			http.send(null);
+		}
+
+        setInterval(() => {
+			sendData();
+		}, 2000);
+        setTimeout(atualizacaoPeriodica, 5000);
+    }
+
+    function obterdados(i) {
+        fetch(`/medidas/tempo-real/${i}`)
+            .then(resposta => {
+
+                if (resposta.ok) {
+                    resposta.json().then(resposta => {
+
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+
+                        for (var i = 0; i < resposta.length; i++){
+                          
+                        }
+                    });
+                } else {
+
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+            });
+    }
 </script>
