@@ -32,192 +32,212 @@
       </div>
     </div>
     <div class="container_mais_votados">
-        <div class="mais_votados">
-            <h1>Agentes mais votados:</h1>
-            <div class="primeiro_lugar">
-                <h2>1º</h2>
-            </div>
-            <div class="segundo_lugar">
-                <h3>2º</h3>
-            </div>
-            <div class="terceiro_lugar">
-                <h3>3º</h3>
-            </div>
+      <div class="mais_votados">
+        <h1>Agentes mais votados:</h1>
+        <div class="primeiro_lugar">
+          <h2>1º</h2>
         </div>
-        <div class="mais_votados">
-            <h1>Mapas mais votados:</h1>
-            <div class="primeiro_lugar">
-                <h2>1º</h2>
-            </div>
-            <div class="segundo_lugar">
-                <h3>2º</h3>
-            </div>
-            <div class="terceiro_lugar">
-                <h3>3º</h3>
-            </div>
+        <div class="segundo_lugar">
+          <h3>2º</h3>
         </div>
+        <div class="terceiro_lugar">
+          <h3>3º</h3>
+        </div>
+      </div>
+      <div class="mais_votados">
+        <h1>Mapas mais votados:</h1>
+        <div class="primeiro_lugar">
+          <h2>1º</h2>
+        </div>
+        <div class="segundo_lugar">
+          <h3>2º</h3>
+        </div>
+        <div class="terceiro_lugar">
+          <h3>3º</h3>
+        </div>
+      </div>
+    </div>
+    <div class="agente_selecionado">
+      <img src="" class="img_agente" />
     </div>
     <div class="selecionar_agentes">
-        <div class="info_agentes">
-            <h1>Agente selecionado: <span id="span_agente_selecionado"></span></h1>
-            <h2>ClAsse: <span id="span_classe_selecionada"></span></h2>
-            <p id="sobre_o_agente"></p>
-        </div>
+      <div class="info_agentes">
+        <h1>Agente selecionado: <span id="span_agente_selecionado"></span></h1>
+        <h2>ClAsse: <span id="span_classe_selecionada"></span></h2>
+        <p id="sobre_o_agente"></p>
+      </div>
       <div class="div_agentes">
-          <button
-            class="agente"
-            id="Astra"
-            style="
-              background-image: url('imagens/astra-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
-            class="agente"
-            id="Breach"
-            style="
-              background-image: url('imagens/breach-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
-            class="agente"
-            id="Brimstone"
-            style="
-              background-image: url('imagens/brimstone-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
+        <button
+          class="agente"
+          id="Astra"
+          style="
+            background-image: url('imagens/astra-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Controlador'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
+          class="agente"
+          id="Breach"
+          style="
+            background-image: url('imagens/breach-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Iniciador'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
+          class="agente"
+          id="Brimstone"
+          style="
+            background-image: url('imagens/brimstone-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Controlador'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
           class="agente"
           id="Chamber"
           style="
-              background-image: url('imagens/chamber-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
+            background-image: url('imagens/chamber-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Sentinela'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
           class="agente"
-            id="Cypher"
-            style="
-              background-image: url('imagens/cypher-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
+          id="Cypher"
+          style="
+            background-image: url('imagens/cypher-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Sentinela'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
           class="agente"
           id="Fade"
           style="
-              background-image: url('imagens/fade-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
-            class="agente"
-            id="Jett"
-            style="
-              background-image: url('imagens/jett-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
-            class="agente"
-            id="Kayo"
-            style="
-              background-image: url('imagens/kayo-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
-            class="agente"
-            id="Killjoy"
-            style="
-              background-image: url('imagens/killjoy-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
-            class="agente"
-            id="Neon"
-            style="
-              background-image: url('imagens/neon-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
+            background-image: url('imagens/fade-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Iniciador'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
+          class="agente"
+          id="Jett"
+          style="
+            background-image: url('imagens/jett-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Duelista'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
+          class="agente"
+          id="Kayo"
+          style="
+            background-image: url('imagens/kayo-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Iniciador'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
+          class="agente"
+          id="Killjoy"
+          style="
+            background-image: url('imagens/killjoy-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Sentinela'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
+          class="agente"
+          id="Neon"
+          style="
+            background-image: url('imagens/neon-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Duelista'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
           class="agente"
           id="Omen"
           style="
-              background-image: url('imagens/omen-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
+            background-image: url('imagens/omen-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Controlador'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
           class="agente"
-            id="Phoenix"
-            style="
-              background-image: url('imagens/phoenix-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
+          id="Phoenix"
+          style="
+            background-image: url('imagens/phoenix-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Duelista'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
           class="agente"
           id="Raze"
           style="
-              background-image: url('imagens/raze-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
-            class="agente"
-            id="Reyna"
-            style="
-              background-image: url('imagens/reyna-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
-            class="agente"
-            id="Sage"
-            style="
-              background-image: url('imagens/sage-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
-            class="agente"
-            id="Skye"
-            style="
-              background-image: url('imagens/skye-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
-            class="agente"
-            id="Sova"
-            style="
-              background-image: url('imagens/sova-select.png');
-              background-size: contain;
-              background-color: transparent;
-            "
-          ></button>
-          <button
+            background-image: url('imagens/raze-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Duelista'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
+          class="agente"
+          id="Reyna"
+          style="
+            background-image: url('imagens/reyna-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Duelista'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
+          class="agente"
+          id="Sage"
+          style="
+            background-image: url('imagens/sage-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Sentinela'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
+          class="agente"
+          id="Skye"
+          style="
+            background-image: url('imagens/skye-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Iniciador'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
+          class="agente"
+          id="Sova"
+          style="
+            background-image: url('imagens/sova-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Iniciador'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+        <button
           class="agente"
           id="Viper"
           style="
@@ -225,9 +245,20 @@
             background-size: contain;
             background-color: transparent;
           "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Controlador'); alterarImgAgente(`imagens/${this.id}.png`)"
         ></button>
-    </div>
-    <button class="btn_confirmar">Confirmar</button>
+        <button
+          class="agente"
+          id="Yoru"
+          style="
+            background-image: url('imagens/yoru-select.png');
+            background-size: contain;
+            background-color: transparent;
+          "
+          onclick="alterarNomeAgente(this.id); alterarClasseAgente('Duelista'); alterarImgAgente(`imagens/${this.id}.png`)"
+        ></button>
+      </div>
+      <button class="btn_confirmar">Confirmar</button>
     </div>
   </body>
 </html>
@@ -257,7 +288,19 @@
 </script>
 
 <script>
-    function escolher_agentes(){
-        
-    }
+  function alterarImgAgente(imagem) {
+    document.querySelector(".img_agente").src = imagem;
+  }
+
+  function alterarNomeAgente(agente) {
+    const agente_selecionado = document.querySelector(
+      "#span_agente_selecionado"
+    );
+    agente_selecionado.innerHTML = agente;
+  }
+
+  function alterarClasseAgente(classe) {
+    const classe_agente = document.querySelector("#span_classe_selecionada");
+    classe_agente.innerHTML = classe;
+  }
 </script>
