@@ -246,6 +246,7 @@ header{
 body{
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .container_select{
@@ -280,7 +281,7 @@ body{
 .mais_votados{
     height: 224px;
     width: 350px;
-    background-color: rgba(0, 0, 0, 0.452);
+    background-color: #00000073;
     margin-left: 12px;
     display: flex;
     flex-direction: column;
@@ -361,13 +362,6 @@ body{
     font-size: 24px;
     margin: 0 auto 20px;
     font-weight: 600;
-}
-
-.classes_agentes{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    padding: 0 14px;
 }
 
 .agente{
