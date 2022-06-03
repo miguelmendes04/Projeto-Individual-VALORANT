@@ -11,20 +11,18 @@
   <body style="background-image: url('imagens/range.jpg')">
     <header>
       <div class="container_header">
-        <a href="#sobre" class="item_lista">Sobre o jogo</a>
+        <a href="index.html#sobre" class="item_lista">Sobre o jogo</a>
         <a href="index.html" class="icon_val">vALORaNT</a>
         <a href="escolha.html" class="item_lista">vote aqui</a>
       </div>
     </header>
     <div id="confirmacao_voto" class="alert">
       <div class="alert_container">
-          <span id="alert_mensagem" class="alert_mensagem">
-              Voto cadastrado!
-          </span>
+        <span id="alert_mensagem" class="alert_mensagem">
+          Voto cadastrado!
+        </span>
       </div>
-      <a href="escolha.html">
-          OK
-      </a>
+      <a href="#" id="btn_ok" onclick="fecharPopUp()"> OK </a>
     </div>
     <div class="container_select">
       <div class="select_mapas">
@@ -46,24 +44,31 @@
         <h1>Agentes mais votados:</h1>
         <div class="primeiro_lugar">
           <h2>1º</h2>
+          <span id="spanAgente1"></span>
+          <span id="qtdVotosAgente1"></span>
         </div>
         <div class="segundo_lugar">
           <h3>2º</h3>
+          <span id="spanAgente2"></span><span id="qtdVotosAgente2"></span>
         </div>
         <div class="terceiro_lugar">
           <h3>3º</h3>
+          <span id="spanAgente3"></span><span id="qtdVotosAgente3"></span>
         </div>
       </div>
       <div class="mais_votados">
         <h1>Mapas mais votados:</h1>
         <div class="primeiro_lugar">
           <h2>1º</h2>
+          <span id="spanMapa1"></span> <span id="qtdVotosMapa1"></span>
         </div>
         <div class="segundo_lugar">
           <h3>2º</h3>
+          <span id="spanMapa2"></span> <span id="qtdVotosMapa2"></span>
         </div>
         <div class="terceiro_lugar">
           <h3>3º</h3>
+          <span id="spanMapa3"></span> <span id="qtdVotosMapa3"></span>
         </div>
       </div>
     </div>
@@ -298,6 +303,8 @@
 </script>
 
 <script>
+  window.onload = obterdadosAgente(), obterdadosMapa();
+
   function alterarImgAgente(imagem) {
     document.querySelector(".img_agente").src = imagem;
   }
@@ -315,68 +322,86 @@
   }
 
   function cadastrar() {
-        //Recupere o valor da nova input pelo nome do id
-        // Agora vá para o método fetch logo abaixo
-        var votoMapaVar = mapa_fundo.value;
-        var votoAgenteVar = span_agente_selecionado.innerHTML;
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var votoMapaVar = mapa_fundo.value;
+    var votoAgenteVar = span_agente_selecionado.innerHTML;
 
-        if (votoAgenteVar == ""){
-          alert('Selecione um agente.')
-        } else{
-          // Enviando o valor da nova input
-          fetch("/usuarios/cadastrar", {
-              method: "POST",
-              headers: {
-                  "Content-Type": "application/json"
-              },
-              body: JSON.stringify({
-                  // crie um atributo que recebe o valor recuperado aqui
-                  // Agora vá para o arquivo routes/usuario.js
-                  votoMapaServer: votoMapaVar,
-                  votoAgenteServer: votoAgenteVar
-              })
-          })
-          document.querySelector('.alert').style.visibility = 'visible'
+    if (votoAgenteVar == "") {
+      alert("Selecione um agente.");
+    } else {
+      // Enviando o valor da nova input
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          votoMapaServer: votoMapaVar,
+          votoAgenteServer: votoAgenteVar,
+        }),
+      });
+      document.querySelector(".alert").style.visibility = "visible";
+    }
+  }
+
+  function obterdadosAgente() {
+    fetch(`/medidas/tempo-realAgente/`)
+      .then((resposta) => {
+        if (resposta.ok) {
+          resposta.json().then((resposta) => {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+            for (var i = 0; i < resposta.length; i++) {
+              (document.querySelector(`#spanAgente${i + 1}`).innerHTML =
+                resposta[i].nomeAgente),
+                (document.querySelector(
+                  `#qtdVotosAgente${i + 1}`
+                ).innerHTML = `${resposta[i].qtdVotos} votos`);
+            }
+          });
+        } else {
+          console.error("Nenhum dado encontrado ou erro na API");
         }
-    }
+      })
+      .catch(function (error) {
+        console.error(
+          `Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`
+        );
+      });
+  }
 
-    function atualizacaoPeriodica() {
-        obterdados();
-        obterdados();
+  function obterdadosMapa() {
+    fetch(`/medidas/tempo-realMapa/`)
+      .then((resposta) => {
+        if (resposta.ok) {
+          resposta.json().then((resposta) => {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-        function sendData() {
-			var http = new XMLHttpRequest();
-			http.open('POST', 'http://localhost:3000/api/sendData', false);
-			http.send(null);
-		}
+            for (var i = 0; i < resposta.length; i++) {
+              (document.querySelector(`#spanMapa${i + 1}`).innerHTML =
+                resposta[i].nomeMapa),
+                (document.querySelector(
+                  `#qtdVotosMapa${i + 1}`
+                ).innerHTML = `${resposta[i].qtdVotos} votos`);
+            }
+          });
+        } else {
+          console.error("Nenhum dado encontrado ou erro na API");
+        }
+      })
+      .catch(function (error) {
+        console.error(
+          `Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`
+        );
+      });
+  }
 
-        setInterval(() => {
-			sendData();
-		}, 2000);
-        setTimeout(atualizacaoPeriodica, 5000);
-    }
-
-    function obterdados(i) {
-        fetch(`/medidas/tempo-real/${i}`)
-            .then(resposta => {
-
-                if (resposta.ok) {
-                    resposta.json().then(resposta => {
-
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-
-                        for (var i = 0; i < resposta.length; i++){
-                          
-                        }
-                    });
-                } else {
-
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
-            });
-    }
+  function fecharPopUp() {
+    document.querySelector(".alert").style.visibility = "hidden";
+    obterdadosAgente();
+    obterdadosMapa();
+  }
 </script>

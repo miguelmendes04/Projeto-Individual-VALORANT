@@ -7,8 +7,12 @@ router.get("/ultimas/:idAquario", function (req, res) {
     medidaController.buscarUltimasMedidas(req, res);
 });
 
-router.get("/tempo-real/:idAquario", function (req, res) {
-    medidaController.buscarMedidasEmTempoReal(req, res);
+router.get("/tempo-realAgente/", function (req, res) {
+    medidaController.buscarMedidasEmTempoRealAgente(req, res);
+})
+
+router.get("/tempo-realMapa/", function (req, res) {
+    medidaController.buscarMedidasEmTempoRealMapa(req, res);
 })
 
 module.exports = router;
