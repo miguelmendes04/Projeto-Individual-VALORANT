@@ -198,7 +198,7 @@ header {
   /* border: 1px solid white; */
   font-size: 22px;
   color: white;
-  text-align: justify;
+  text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -235,7 +235,7 @@ header {
 .sobre_mim .container .div_textos {
   width: 30%;
   font-size: 22px;
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -341,13 +341,14 @@ body {
 .mais_votados {
   height: 224px;
   width: 350px;
-  background-color: #000000c1;
+  background-color: #000000be;
   margin-left: 12px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: white;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .mais_votados h1 {
@@ -358,6 +359,7 @@ body {
 .mais_votados div {
   display: flex;
   align-items: center;
+  padding: 0 5px;
 }
 
 .mais_votados div h2 {
@@ -458,7 +460,8 @@ body {
 .agente {
   width: 70px;
   height: 70px;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.232);
+  background-size: contain;
   cursor: pointer;
   border-radius: 5px;
 }
