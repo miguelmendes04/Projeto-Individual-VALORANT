@@ -1,27 +1,13 @@
 var medidaModel = require("../models/medidaModel");
 
-function buscarMedidasEmTempoRealMapa(req, res) {
 
-    console.log(`Recuperando medidas em tempo real`);
+function buscarMedidasEmTempoReal(req, res) {
 
-    medidaModel.buscarMedidasEmTempoRealMapa().then(function (resultado) {
-        if (resultado.length > 0) {
-            res.status(200).json(resultado);
-        } else {
-            res.status(204).send("Nenhum resultado encontrado!")
-        }
-    }).catch(function (erro) {
-        console.log(erro);
-        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
-        res.status(500).json(erro.sqlMessage);
-    });
-}
+    var tipoDado = req.params.tipoDado;
 
-function buscarMedidasEmTempoRealAgente(req, res) {
+    console.log(`Recuperando métricas em tempo real`);
 
-    console.log(`Recuperando medidas em tempo real`);
-
-    medidaModel.buscarMedidasEmTempoRealAgente().then(function (resultado) {
+    medidaModel.buscarMedidasEmTempoReal(tipoDado).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -35,7 +21,5 @@ function buscarMedidasEmTempoRealAgente(req, res) {
 }
 
 module.exports = {
-    buscarUltimasMedidas,
-    buscarMedidasEmTempoRealMapa,
-    buscarMedidasEmTempoRealAgente
+    buscarMedidasEmTempoReal
 }

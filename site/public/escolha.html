@@ -265,7 +265,7 @@
 </script>
 
 <script>
-  window.onload = obterdadosAgente(), obterdadosMapa();
+  window.onload = obterdados('Agente'), obterdados('Mapa');
 
   function alterarImgAgente(imagem) {
     document.querySelector(".img_agente").src = imagem;
@@ -309,44 +309,18 @@
     }
   }
 
-  function obterdadosAgente() {
-    fetch(`/medidas/tempo-realAgente/`)
+  function obterdados(tipoDado) {
+    fetch(`/medidas/tempo-real${tipoDado}/`)
       .then((resposta) => {
         if (resposta.ok) {
           resposta.json().then((resposta) => {
             console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
             for (var i = 0; i < resposta.length; i++) {
-              (document.querySelector(`#spanAgente${i + 1}`).innerHTML =
-                resposta[i].nomeAgente),
+              (document.querySelector(`#span${tipoDado}${i + 1}`).innerHTML =
+                resposta[i].nome),
                 (document.querySelector(
-                  `#qtdVotosAgente${i + 1}`
-                ).innerHTML = `${resposta[i].qtdVotos} votos`);
-            }
-          });
-        } else {
-          console.error("Nenhum dado encontrado ou erro na API");
-        }
-      })
-      .catch(function (error) {
-        console.error(
-          `Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`
-        );
-      });
-  }
-
-  function obterdadosMapa() {
-    fetch(`/medidas/tempo-realMapa/`)
-      .then((resposta) => {
-        if (resposta.ok) {
-          resposta.json().then((resposta) => {
-            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-            for (var i = 0; i < resposta.length; i++) {
-              (document.querySelector(`#spanMapa${i + 1}`).innerHTML =
-                resposta[i].nomeMapa),
-                (document.querySelector(
-                  `#qtdVotosMapa${i + 1}`
+                  `#qtdVotos${tipoDado}${i + 1}`
                 ).innerHTML = `${resposta[i].qtdVotos} votos`);
             }
           });
@@ -363,7 +337,7 @@
 
   function fecharPopUp() {
     document.querySelector(".alert").style.visibility = "hidden";
-    obterdadosAgente();
-    obterdadosMapa();
+    obterdados('Agente');
+    obterdados('Mapa');
   }
 </script>

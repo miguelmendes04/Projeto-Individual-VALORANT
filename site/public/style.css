@@ -129,7 +129,7 @@ header {
 /* sobre o jogo */
 
 .sobre_o_jogo {
-  height: 1400px;
+  height: 1700px;
   background-color: #000;
   display: flex;
   flex-direction: column;
@@ -143,7 +143,7 @@ header {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .sobre_o_jogo .fundo_val .fundo {
@@ -175,10 +175,8 @@ header {
 }
 
 .sobre_o_jogo .container1 {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  width: 100%;
+  text-align: center;
+  padding: 16px;
   height: 90px;
   /* border: 1px solid purple; */
   z-index: 3;
@@ -189,7 +187,7 @@ header {
   display: flex;
   justify-content: space-around;
   /* border: 1px solid yellow; */
-  height: 750px;
+  height: 1000px;
   z-index: 3;
 }
 
@@ -202,6 +200,13 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.explicacao_jogo h2{
+  font-family: 'VALORANT';
+  color: #ff4655;
+  margin: 0;
+  font-size: 26px;
 }
 
 .sobre_o_jogo .video_highlight {
@@ -243,11 +248,7 @@ header {
 
 .div_textos a{
     text-decoration: none;
-    color: white;
-}
-
-.div_textos a:hover{
-    color: #f73243;
+    color: #ff4655;
 }
 
 .sobre_mim h1 {
@@ -276,8 +277,8 @@ body {
   width: 700px;
   height: 200px;
   background-color: black;
-  border: 3px solid #f73243;
-  color: #f73243;
+  border: 3px solid #ff4655;
+  color: #ff4655;
   border-radius: 10px;
   position: absolute;
   top: 50%;
@@ -307,7 +308,7 @@ body {
 }
 
 .alert a:hover {
-  background-color: #f73243;
+  background-color: #ff4655;
 }
 
 .container_select {
@@ -316,11 +317,11 @@ body {
 }
 
 .select_mapas {
-  margin: 50px 16px 0 0;
+  margin: 50px 24px 0 0;
   padding: 12px;
   background-color: black;
   border-radius: 0 10px 0 10px;
-  font-size: 16px;
+  font-size: 20px;
   color: white;
   /* text-shadow: 1px 0 0 white, -1px 0 0 white, 0 1px 0 white, 0 -1px 0 white, 1px 1px white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white; */
 }
@@ -331,7 +332,7 @@ body {
   color: white;
   border-radius: 10px;
   text-align: center;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .container_mais_votados {
@@ -349,6 +350,7 @@ body {
   justify-content: center;
   color: white;
   border-radius: 10px;
+  border: 1px solid #000;
 }
 
 .mais_votados h1 {
@@ -412,7 +414,7 @@ body {
 }
 
 .selecionar_agentes {
-  height: 400px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -420,10 +422,14 @@ body {
 
 .info_agentes {
   height: 100px;
-  width: 40%;
-  padding-left: 12px;
+  max-width: 35%;
+  margin-left: 12px;
   font-family: "VALORANT";
   color: white;
+  background: linear-gradient(45deg, black, transparent);
+  padding: 10px;
+  border-radius: 5px;
+  overflow: hidden;
   text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000,
     1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
   /* border: 1px solid yellow; */
@@ -440,21 +446,22 @@ body {
 .btn_confirmar {
   width: 150px;
   height: 50px;
-  border: 2px solid black;
+  border: 2px solid #000;
   border-radius: 5px;
-  color: white;
-  background-color: black;
+  color: #000;
+  background-color: #ece8e1;
   font-size: 24px;
   margin: 0 auto 20px;
   font-weight: 600;
+  position: absolute;
+  right: 24px;
+  bottom: 175px;
 }
 
 .btn_confirmar:hover {
-  background-color: #f73243;
+  background-color: #ff4655;
+  transition: 0.5s;
   cursor: pointer;
-  font-size: 24px;
-  margin: 0 auto 20px;
-  font-weight: 600;
 }
 
 .agente {
@@ -468,6 +475,7 @@ body {
 
 .agente:focus {
   border: 3px solid rgb(247, 50, 67);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .agente:hover {
@@ -489,7 +497,7 @@ body {
   transform: translateY(-30%);
   /* border: 1px solid yellow; */
   height: 450px;
-  width: 300px;
+  width: 315px;
 }
 
 .agente_selecionado img {
@@ -499,6 +507,7 @@ body {
 footer {
   background-color: #fa4454;
   height: 30px;
+  font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
